@@ -1,13 +1,15 @@
-const input = document.querySelector('input');
-const button = document.querySelector('button');
+const input = document.getElementById('question');
+const button = document.getElementById('askButton');
+const response = document.getElementById('response');
 
 button.addEventListener('click', function () {
   const question = input.value.trim();
 
   if (question === '') {
-    alert('Please type a question first.');
+    response.textContent = 'Please type a question first.';
     return;
   }
 
-  alert('Golden Touch AI received your question: ' + question);
+  response.textContent =
+    'Golden Touch AI received your question: "' + question + '"';
 });
