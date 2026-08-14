@@ -11,5 +11,5 @@ button.addEventListener("click", function () {
     }
 
     response.textContent =
-        'Golden Touch AI received your question: "' + question + '"';
+        "✅ Golden Touch AI is working! You asked: " + question;
 });
