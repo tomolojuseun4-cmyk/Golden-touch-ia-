@@ -10,6 +10,16 @@ button.addEventListener("click", function () {
     return;
   }
 
-  response.textContent =
-    "Golden Touch AI is thinking about: " + question;
+  response.textContent = "Golden Touch AI is thinking...";
+
+  setTimeout(function () {
+    response.textContent =
+      "Golden Touch AI is ready to help with your question: " + question;
+  }, 1200);
+});
+
+input.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    button.click();
+  }
 });
