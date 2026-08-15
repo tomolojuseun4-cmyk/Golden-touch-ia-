@@ -1,7 +1,11 @@
+/* ================================
+   GOLDEN TOUCH AI - MAIN STYLES
+   ================================ */
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -10,258 +14,294 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #f5f7fb;
+  background: #f5f8fc;
   color: #172033;
   line-height: 1.6;
 }
 
-/* HERO SECTION */
+/* ================================
+   HEADER
+   ================================ */
+
+header {
+  background: #ffffff;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5eaf0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  color: #1769e0;
+  font-size: 1.5rem;
+}
+
+nav a {
+  color: #172033;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #1769e0;
+}
+
+/* ================================
+   HERO SECTION
+   ================================ */
 
 .hero {
-  min-height: 520px;
+  min-height: 75vh;
+  padding: 90px 7%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #101828, #1d4ed8);
-  color: white;
+  background: linear-gradient(135deg, #eef5ff, #ffffff);
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 850px;
 }
 
-.logo-circle {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 25px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  color: #1d4ed8;
-  font-size: 25px;
-  font-weight: bold;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+.hero h2 {
+  font-size: clamp(2.3rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 25px;
+  color: #12213a;
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
+.hero h2 span {
+  color: #1769e0;
 }
 
 .hero p {
-  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto 35px;
+  font-size: 1.15rem;
+  color: #5b6678;
 }
 
-.hero-text {
-  max-width: 650px;
-  margin: 15px auto 30px;
-  font-size: 17px !important;
-  opacity: 0.9;
-}
+/* ================================
+   BUTTONS
+   ================================ */
 
-.hero-button {
+button,
+.btn {
   display: inline-block;
-  padding: 14px 28px;
-  background: white;
-  color: #1d4ed8;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.hero-button:hover {
-  transform: translateY(-3px);
-}
-
-
-/* AI ASSISTANT */
-
-#ai-assistant {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 40px 25px;
-  text-align: center;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
-}
-
-#ai-assistant h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-#question {
-  width: 90%;
-  max-width: 650px;
-  padding: 15px;
-  margin-top: 25px;
-  border: 1px solid #d6dbe5;
-  border-radius: 10px;
-  font-size: 16px;
-  outline: none;
-}
-
-#question:focus {
-  border-color: #2563eb;
-}
-
-#askButton {
-  padding: 13px 30px;
   border: none;
-  border-radius: 25px;
-  background: #2563eb;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 10px;
+  padding: 13px 24px;
+  background: #1769e0;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.3s;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-#askButton:hover {
+button:hover,
+.btn:hover {
+  background: #0d4fae;
   transform: translateY(-2px);
 }
 
-#response {
-  margin: 25px auto 0;
-  padding: 20px;
-  max-width: 700px;
-  min-height: 60px;
-  background: #f1f5f9;
-  border-radius: 12px;
+/* ================================
+   GENERAL SECTIONS
+   ================================ */
+
+section {
+  padding: 75px 7%;
 }
 
-
-/* DIVIDER */
-
-hr {
-  border: none;
-  height: 1px;
-  background: #e2e8f0;
-  margin: 20px 0;
-}
-
-
-/* DESIGN RESOURCE HUB */
-
-#design-resources {
-  max-width: 1100px;
-  margin: 70px auto;
-  padding: 20px;
+section h2 {
   text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #12213a;
 }
 
-#design-resources h2 {
-  font-size: 34px;
-  margin-bottom: 10px;
+.section-intro {
+  max-width: 700px;
+  margin: 0 auto 45px;
+  text-align: center;
+  color: #657084;
 }
 
-.resource-box {
-  margin-top: 35px;
+/* ================================
+   AI ASSISTANT
+   ================================ */
+
+.ai-assistant {
+  background: #ffffff;
+}
+
+.ai-box {
+  max-width: 800px;
+  margin: 35px auto 0;
+  padding: 30px;
+  background: #f7faff;
+  border: 1px solid #dfe8f5;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(23, 105, 224, 0.08);
+}
+
+.ai-box input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccd7e6;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.ai-box input:focus {
+  border-color: #1769e0;
+}
+
+#response {
+  margin-top: 20px;
+  padding: 15px;
+  min-height: 50px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #4e5b6e;
+}
+
+/* ================================
+   RESOURCE HUB
+   ================================ */
+
+.resource-hub {
+  background: #f5f8fc;
+}
+
+.resource-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto 0;
 }
 
 .resource-card {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-  transition: 0.3s;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  border: 1px solid #e1e8f2;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 25px rgba(23, 32, 51, 0.05);
 }
 
 .resource-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-7px);
+  border-color: #1769e0;
+  box-shadow: 0 15px 35px rgba(23, 105, 224, 0.12);
 }
 
 .resource-card h3 {
+  color: #1769e0;
   margin-bottom: 10px;
-  font-size: 21px;
+  font-size: 1.25rem;
 }
 
 .resource-card p {
-  color: #64748b;
-  margin-bottom: 20px;
+  color: #667085;
+  font-size: 0.95rem;
 }
 
-.resource-card button {
-  border: none;
-  padding: 11px 20px;
-  border-radius: 20px;
-  background: #172033;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-
-/* FUTURE FEATURES */
+/* ================================
+   FUTURE FEATURES
+   ================================ */
 
 .future-features {
-  padding: 70px 20px;
-  text-align: center;
-  background: #eaf1ff;
-}
-
-.future-features h2 {
-  font-size: 32px;
-  margin-bottom: 35px;
+  background: #ffffff;
 }
 
 .feature-list {
-  max-width: 1100px;
-  margin: auto;
+  max-width: 1000px;
+  margin: 40px auto 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.feature-list div {
-  background: white;
-  padding: 25px 15px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+.feature-item {
+  padding: 25px;
+  background: #f7faff;
+  border: 1px solid #e1e8f2;
+  border-radius: 14px;
 }
 
-.feature-list h3 {
-  font-size: 18px;
+.feature-item h3 {
+  color: #1769e0;
   margin-bottom: 8px;
 }
 
-.feature-list p {
-  color: #64748b;
+.feature-item p {
+  color: #667085;
 }
 
-
-/* FOOTER */
+/* ================================
+   FOOTER
+   ================================ */
 
 footer {
-  padding: 30px 20px;
+  background: #12213a;
+  color: #ffffff;
   text-align: center;
-  background: #101828;
-  color: white;
+  padding: 35px 7%;
 }
 
 footer p {
   margin: 5px 0;
+  color: #c8d1df;
 }
 
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
 
-/* MOBILE RESPONSIVE DESIGN */
+footer a:hover {
+  color: #69a4ff;
+}
+
+/* ================================
+   MOBILE RESPONSIVE DESIGN
+   ================================ */
 
 @media (max-width: 800px) {
 
-  .hero h1 {
-    font-size: 36px;
+  header {
+    padding: 15px 5%;
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .resource-box {
+  nav a {
+    margin: 0 7px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    min-height: 65vh;
+    padding: 70px 5%;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+
+  .resource-grid {
     grid-template-columns: 1fr;
   }
 
@@ -269,11 +309,40 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  #ai-assistant {
-    margin: 40px 15px;
+  .hero p {
+    font-size: 1rem;
   }
 
-  #question {
+  section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 4px 6px;
+  }
+
+  .hero h2 {
+    font-size: 2.3rem;
+  }
+
+  .ai-box {
+    padding: 20px;
+  }
+
+  button,
+  .btn {
     width: 100%;
   }
 }
