@@ -1,163 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden Touch AI</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+const input = document.getElementById("question");
+const button = document.getElementById("askButton");
+const response = document.getElementById("response");
 
-<body>
+function askGoldenTouchAI() {
+  const question = input.value.trim();
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="hero-content">
-      <div class="logo-circle">GT</div>
+  if (question === "") {
+    response.textContent = "Please type a question first.";
+    input.focus();
+    return;
+  }
 
-      <h1>Welcome to Golden Touch AI</h1>
+  button.disabled = true;
+  button.textContent = "Thinking...";
+  response.textContent = "Golden Touch AI is thinking...";
 
-      <p>
-        Smart Technology. Creative Solutions.
-      </p>
+  setTimeout(function () {
+    response.textContent =
+      "Golden Touch AI is ready to help with your question: " + question;
 
-      <p class="hero-text">
-        Your creative AI partner for ideas, design, technology and digital solutions.
-      </p>
+    button.disabled = false;
+    button.textContent = "Ask AI";
+  }, 1200);
+}
 
-      <a href="#ai-assistant" class="hero-button">
-        Start Creating
-      </a>
-    </div>
-  </header>
+button.addEventListener("click", askGoldenTouchAI);
 
-
-  <!-- AI ASSISTANT -->
-  <section id="ai-assistant">
-
-    <h2>🤖 Your AI Assistant</h2>
-
-    <p>
-      Ask Golden Touch AI a question and get a quick response.
-    </p>
-
-    <input
-      id="question"
-      type="text"
-      placeholder="Ask Golden Touch AI anything..."
-    >
-
-    <br><br>
-
-    <button id="askButton">Ask AI</button>
-
-    <div id="response">
-      Your AI response will appear here.
-    </div>
-
-  </section>
-
-
-  <hr>
-
-
-  <!-- DESIGN RESOURCE HUB -->
-  <section id="design-resources">
-
-    <h2>🎨 Design Resource Hub</h2>
-
-    <p>
-      Find useful resources for your graphic design projects.
-    </p>
-
-    <div class="resource-box">
-
-      <div class="resource-card">
-        <h3>🖼️ PNG Elements</h3>
-        <p>Transparent images and design elements.</p>
-        <button>Explore PNGs</button>
-      </div>
-
-      <div class="resource-card">
-        <h3>🌄 Backgrounds</h3>
-        <p>Beautiful backgrounds for your designs.</p>
-        <button>Explore Backgrounds</button>
-      </div>
-
-      <div class="resource-card">
-        <h3>🔤 Fonts</h3>
-        <p>Discover fonts for creative projects.</p>
-        <button>Explore Fonts</button>
-      </div>
-
-      <div class="resource-card">
-        <h3>📐 Templates</h3>
-        <p>Ready-to-use graphic design templates.</p>
-        <button>Explore Templates</button>
-      </div>
-
-      <div class="resource-card">
-        <h3>📱 Mockups</h3>
-        <p>Show your designs professionally.</p>
-        <button>Explore Mockups</button>
-      </div>
-
-      <div class="resource-card">
-        <h3>✨ Design Icons</h3>
-        <p>Useful icons and creative elements.</p>
-        <button>Explore Icons</button>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FUTURE FEATURES -->
-  <section class="future-features">
-
-    <h2>🚀 More Coming to Golden Touch AI</h2>
-
-    <div class="feature-list">
-
-      <div>
-        <h3>🎨 AI Image Studio</h3>
-        <p>Create amazing images with AI.</p>
-      </div>
-
-      <div>
-        <h3>🎬 AI Video Studio</h3>
-        <p>Turn ideas into creative videos.</p>
-      </div>
-
-      <div>
-        <h3>🎵 AI Music Studio</h3>
-        <p>Explore AI-powered music creation.</p>
-      </div>
-
-      <div>
-        <h3>💻 Coding Touch Academy</h3>
-        <p>Learn technology and coding skills.</p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <p>
-      © 2026 Golden Touch AI
-    </p>
-
-    <p>
-      Smart Technology. Creative Solutions.
-    </p>
-  </footer>
-
-
-  <!-- JAVASCRIPT -->
-  <script src="script.js"></script>
-
-</body>
-</html>
+input.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    askGoldenTouchAI();
+  }
+});
