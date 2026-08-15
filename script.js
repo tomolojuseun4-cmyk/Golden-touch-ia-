@@ -1,41 +1,37 @@
-const input = document.getElementById('question');
-const button = document.getElementById('askButton');
-const response = document.getElementById('response');
+const input = document.getElementById("question");
+const button = document.getElementById("askButton");
+const response = document.getElementById("response");
 
-button.addEventListener('click', function () {
+// AI Assistant
+button.addEventListener("click", function () {
   const question = input.value.trim();
 
-  if (question === '') {
-    response.textContent = 'Please type a question first.';
+  if (question === "") {
+    response.textContent = "Please type a question first.";
     return;
   }
 
-  response.textContent = 'Golden Touch AI is thinking...';
+  response.textContent =
+    "Golden Touch AI is thinking about: " + question;
+});
 
-  setTimeout(function () {
-    const lowerQuestion = question.toLowerCase();
 
-    let answer;
+// Design Resource Hub
+const resourceButtons = document.querySelectorAll(".resource-card button");
 
-    if (lowerQuestion.includes('hello') ||
-        lowerQuestion.includes('hi') ||
-        lowerQuestion.includes('hey')) {
-      answer = 'Hello! 👋 Welcome to Golden Touch AI. How can I help you today?';
-    } 
-    else if (lowerQuestion.includes('graphic design') ||
-             lowerQuestion.includes('design')) {
-      answer = '🎨 Golden Touch AI can help you with graphic design ideas, flyers, logos, branding, social media designs, and creative projects.';
-    } 
-    else if (lowerQuestion.includes('business')) {
-      answer = '💼 Golden Touch AI can help you develop business ideas, marketing strategies, branding plans, and digital business solutions.';
-    } 
-    else if (lowerQuestion.includes('ai')) {
-      answer = '🤖 AI can help you create content, generate ideas, improve designs, automate tasks, and build smarter digital solutions.';
-    } 
-    else {
-      answer = '✨ Golden Touch AI received your question: "' + question + '"\n\nI’m ready to help you with design, business, technology, AI, and creative ideas.';
-    }
+resourceButtons.forEach(function (resourceButton) {
+  resourceButton.addEventListener("click", function () {
 
-    response.textContent = answer;
-  }, 800);
+    const cardTitle =
+      this.parentElement.querySelector("h3").textContent;
+
+    response.textContent =
+      "Golden Touch AI Resource Hub: " +
+      cardTitle +
+      " selected. This resource section is coming soon.";
+
+    document.getElementById("ai-assistant").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
 });
