@@ -1,34 +1,30 @@
-const input = document.getElementById("question");
-const button = document.getElementById("askButton");
-const response = document.getElementById("response");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Touch AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-function askGoldenTouchAI() {
-  const question = input.value.trim();
+<body>
 
-  if (question === "") {
-    response.textContent = "Please type a question first.";
-    input.focus();
-    return;
-  }
+  <div class="container">
+    <h1>Golden Touch AI</h1>
+    <p>Your intelligent assistant</p>
 
-  button.disabled = true;
-  button.textContent = "Thinking...";
-  response.textContent = "Golden Touch AI is thinking...";
+    <input
+      type="text"
+      id="question"
+      placeholder="Ask Golden Touch AI anything..."
+    >
 
-  setTimeout(function () {
-    response.textContent =
-      "Golden Touch AI is ready to help with your question: " + question;
+    <button id="askButton">Ask AI</button>
 
-    button.disabled = false;
-    button.textContent = "Ask AI";
-  }, 1200);
-}
+    <div id="response"></div>
+  </div>
 
-button.addEventListener("click", askGoldenTouchAI);
+  <script src="script.js"></script>
 
-input.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    askGoldenTouchAI();
-  }
-});
+</body>
+</html>
